@@ -126,7 +126,7 @@ class LanguageProvider(
         }
 
         fun add(statType: StatType<*>, value: String) {
-            add(statType.translationKey, value)
+            add(/*statType.translationKey*/"", value)
         }
 
         fun add(statusEffect: StatusEffect, value: String) {

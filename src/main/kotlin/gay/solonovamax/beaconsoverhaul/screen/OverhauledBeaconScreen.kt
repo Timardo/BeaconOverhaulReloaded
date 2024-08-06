@@ -303,7 +303,7 @@ class OverhauledBeaconScreen(
     ) : PressableWidget(x, y, 22, 22, message), BeaconButtonWidget {
         var isDisabled: Boolean = false
 
-        public override fun renderButton(context: DrawContext, mouseX: Int, mouseY: Int, delta: Float) {
+        public override fun renderWidget(context: DrawContext, mouseX: Int, mouseY: Int, delta: Float) {
             with(context) {
                 renderButton()
             }

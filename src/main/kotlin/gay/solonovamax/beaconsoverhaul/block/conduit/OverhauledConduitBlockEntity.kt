@@ -65,10 +65,11 @@ class OverhauledConduitBlockEntity(pos: BlockPos?, state: BlockState?) : BlockEn
     private var nextAmbientSoundTime: Long = 0
 
     private val attackZone: Box
-        get() = Box(pos, pos + 1).expand(KILL_RANGE)
+        // why would they remove the overload, why
+        get() = Box(pos.x.toDouble(), pos.y.toDouble(), pos.z.toDouble(), (pos + 1).x.toDouble(), (pos + 1).y.toDouble(), (pos + 1).z.toDouble()).expand(KILL_RANGE)
 
     private val effectZone: Box
-        get() = Box(pos, pos + 1).expand(range).stretch(0.0, world?.height?.toDouble() ?: 0.0, 0.0)
+        get() = Box(pos.x.toDouble(), pos.y.toDouble(), pos.z.toDouble(), (pos + 1).x.toDouble(), (pos + 1).y.toDouble(), (pos + 1).z.toDouble()).expand(range).stretch(0.0, world?.height?.toDouble() ?: 0.0, 0.0)
 
     var tier: Int = 0
         private set

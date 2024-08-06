@@ -1,12 +1,12 @@
 package gay.solonovamax.beaconsoverhaul.datagen
 
 import gay.solonovamax.beaconsoverhaul.BeaconConstants
-import gay.solonovamax.beaconsoverhaul.datagen.advancement.AdvancementProvider
+//import gay.solonovamax.beaconsoverhaul.datagen.advancement.AdvancementProvider
 import gay.solonovamax.beaconsoverhaul.datagen.lang.LanguageProvider
 import gay.solonovamax.beaconsoverhaul.datagen.loot.AdvancementLootTableProvider
 import gay.solonovamax.beaconsoverhaul.datagen.loot.BlockDropLootTableProvider
 import gay.solonovamax.beaconsoverhaul.datagen.model.ModelProvider
-import gay.solonovamax.beaconsoverhaul.datagen.recipe.RecipeProvider
+//import gay.solonovamax.beaconsoverhaul.datagen.recipe.RecipeProvider
 import gay.solonovamax.beaconsoverhaul.datagen.tag.BlockTagProvider
 import gay.solonovamax.beaconsoverhaul.datagen.tag.ItemTagProvider
 import gay.solonovamax.beaconsoverhaul.datagen.util.addProviders
@@ -33,10 +33,10 @@ object BeaconOverhaulReloadedDataGenerator : DataGeneratorEntrypoint {
         val pack = generator.createPack()
 
         pack.addProviders(
-            AdvancementProvider::class,
+            //AdvancementProvider::class,
             AdvancementLootTableProvider::class,
             ModelProvider::class,
-            RecipeProvider::class,
+            //RecipeProvider::class,
             BlockDropLootTableProvider::class,
             ItemTagProvider::class,
             BlockTagProvider::class,

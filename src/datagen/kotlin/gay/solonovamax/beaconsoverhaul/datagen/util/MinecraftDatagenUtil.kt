@@ -10,7 +10,7 @@ import net.minecraft.data.client.BlockStateModelGenerator
 import net.minecraft.data.client.ModelIds
 import net.minecraft.data.client.TexturedModel
 import net.minecraft.data.family.BlockFamily
-import net.minecraft.data.server.recipe.RecipeJsonProvider
+import net.minecraft.data.server.recipe.RecipeExporter
 import net.minecraft.data.server.recipe.RecipeProvider
 import net.minecraft.loot.LootPool
 import net.minecraft.loot.LootTable
@@ -35,7 +35,7 @@ import net.minecraft.loot.context.LootContext.EntityTarget as LootEntityTarget
 
 typealias AdvancementExporter = Consumer<Advancement>
 
-fun AdvancementExporter.buildExportedAdvancement(id: Identifier, builder: Advancement.Builder.() -> Unit): Advancement {
+/*fun AdvancementExporter.buildExportedAdvancement(id: Identifier, builder: Advancement.Builder.() -> Unit): Advancement {
     return Advancement.Builder.createUntelemetered().apply(builder).build(id).also { advancement ->
         accept(advancement)
     }
@@ -43,7 +43,7 @@ fun AdvancementExporter.buildExportedAdvancement(id: Identifier, builder: Advanc
 
 fun FabricAdvancementProvider.advancementOf(id: Identifier): Advancement {
     return Advancement.Builder.createUntelemetered().build(id)
-}
+}*/
 
 typealias LootTableExporter = BiConsumer<Identifier, LootTable.Builder>
 
@@ -79,7 +79,7 @@ fun BlockStateModelGenerator.registerWallModelTexturePool(family: BlockFamily): 
 
 operator fun BlockFamily.get(variant: FamilyVariant): Block = getVariant(variant)
 
-typealias RecipeExporter = Consumer<RecipeJsonProvider>
+typealias RecipeExporter = Consumer<RecipeExporter>
 
 fun RecipeExporter.offerWallRecipe(family: BlockFamily) {
     val wallVariantName = FamilyVariant.WALL.getName()

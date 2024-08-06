@@ -133,6 +133,9 @@ repositories {
     soloStudios()
     fabric()
     mavenCentral()
+    maven("https://maven.terraformersmc.com/")
+    maven("https://maven.blamejared.com/")
+    maven("https://maven.nucleoid.xyz/")
 }
 
 dependencies {
@@ -140,7 +143,8 @@ dependencies {
 
     // the last item has the highest priority
     mappings(loom.layered {
-        mappings(variantOf(libs.quilt.mappings) { classifier("intermediary-v2") })
+        // quilt mappings have a problem with conflicted names
+        //mappings(variantOf(libs.quilt.mappings) { classifier("intermediary-v2") })
         mappings(variantOf(libs.yarn.mappings) { classifier("v2") })
     })
 

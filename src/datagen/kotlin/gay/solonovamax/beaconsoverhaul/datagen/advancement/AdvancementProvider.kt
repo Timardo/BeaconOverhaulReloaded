@@ -1,6 +1,6 @@
 package gay.solonovamax.beaconsoverhaul.datagen.advancement
 
-import gay.solonovamax.beaconsoverhaul.advancement.RedirectBeaconCriterion
+/*import gay.solonovamax.beaconsoverhaul.advancement.RedirectBeaconCriterion
 import gay.solonovamax.beaconsoverhaul.datagen.util.AdvancementExporter
 import gay.solonovamax.beaconsoverhaul.datagen.util.advancementOf
 import gay.solonovamax.beaconsoverhaul.datagen.util.buildExportedAdvancement
@@ -72,3 +72,4 @@ class AdvancementProvider(output: FabricDataOutput) : FabricAdvancementProvider(
         }
     }
 }
+*/

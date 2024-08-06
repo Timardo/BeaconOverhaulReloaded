@@ -14,6 +14,7 @@ import net.minecraft.inventory.SimpleInventory
 import net.minecraft.item.ItemStack
 import net.minecraft.network.PacketByteBuf
 import net.minecraft.registry.tag.ItemTags
+import net.minecraft.screen.BeaconScreenHandler
 import net.minecraft.screen.PropertyDelegate
 import net.minecraft.screen.ScreenHandlerContext
 import net.minecraft.screen.slot.Slot
@@ -73,10 +74,10 @@ class OverhauledBeaconScreenHandler private constructor(
         get() = delegate[0]
 
     val primaryEffect: StatusEffect?
-        get() = StatusEffect.byRawId(delegate[1])
+        get() = BeaconScreenHandler.getStatusEffectForRawId(delegate[1])
 
     val secondaryEffect: StatusEffect?
-        get() = StatusEffect.byRawId(delegate[2])
+        get() = BeaconScreenHandler.getStatusEffectForRawId(delegate[2])
 
     val hasPayment: Boolean
         get() = !paymentInventory.getStack(PAYMENT_SLOT_ID).isEmpty
@@ -141,8 +142,8 @@ class OverhauledBeaconScreenHandler private constructor(
 
     fun setEffects(primary: Optional<StatusEffect>, secondary: Optional<StatusEffect>) {
         if (paymentSlot.hasStack()) {
-            delegate[1] = primary.map(StatusEffect::getRawId).orElse(-1)
-            delegate[2] = secondary.map(StatusEffect::getRawId).orElse(-1)
+            delegate[1] = primary.map(BeaconScreenHandler::getRawIdForStatusEffect).orElse(-1)
+            delegate[2] = secondary.map(BeaconScreenHandler::getRawIdForStatusEffect).orElse(-1)
             paymentSlot.takeStack(1)
             context.run(World::markDirty)
         }

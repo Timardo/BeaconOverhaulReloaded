@@ -2,6 +2,7 @@ package gay.solonovamax.beaconsoverhaul.block.beacon
 
 import net.minecraft.block.entity.BeaconBlockEntity
 import net.minecraft.entity.effect.StatusEffect
+import net.minecraft.screen.BeaconScreenHandler
 import net.minecraft.screen.PropertyDelegate
 import net.minecraft.sound.SoundEvents
 
@@ -11,8 +12,8 @@ class OverhauledBeaconPropertyDelegate(
     override fun get(index: Int): Int {
         return when (index) {
             0 -> beacon.level
-            1 -> StatusEffect.getRawIdNullable(beacon.primaryEffect)
-            2 -> StatusEffect.getRawIdNullable(beacon.secondaryEffect)
+            1 -> BeaconScreenHandler.getRawIdForStatusEffect(beacon.primaryEffect)
+            2 -> BeaconScreenHandler.getRawIdForStatusEffect(beacon.secondaryEffect)
             else -> 0
         }
     }
@@ -41,7 +42,8 @@ class OverhauledBeaconPropertyDelegate(
     }
 
     private fun OverhauledBeacon.updateEffect(effectId: Int, currentEffect: StatusEffect?, applyNewEffect: (StatusEffect?) -> Unit) {
-        val newEffect = BeaconBlockEntity.getPotionEffectById(effectId)
+        val effectFromId = BeaconScreenHandler.getStatusEffectForRawId(effectId)
+        val newEffect = BeaconBlockEntity.getEffectOrNull(effectFromId)
         when {
             newEffect == null -> applyNewEffect(null)
             canApplyEffect(newEffect) && newEffect != currentEffect -> {

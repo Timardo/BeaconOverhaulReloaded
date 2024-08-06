@@ -8,28 +8,28 @@ nyx = "0.2.0-SNAPSHOT"
 
 axion-release = "1.17.2"
 
-minecraft = "1.20.1"
+minecraft = "1.20.4"
 
-loom = "1.7.1"
+loom = "1.7-SNAPSHOT"
 
 minotaur = "2.8.7"
 
 fabric-loader = "0.15.11"
-fabric-api = "0.92.2+1.20.1"
+fabric-api = "0.97.1+1.20.4"
 fabric-language-kotlin = "1.11.0+kotlin.2.0.0"
-fabric-yarn = "1.20.1+build.10"
+fabric-yarn = "1.20.4+build.3"
 
-quilt-mappings = "1.20.1+build.23"
+quilt-mappings = "1.20.4+build.3"
 
 slf4k = "0.5.3"
 
 guava-kotlin = "0.1.2"
 
-cloth-config = "11.1.118"
+cloth-config = "13.0.121"
 
-modmenu = "7.2.2"
+modmenu = "9.2.0"
 
-yacl = "3.5.0+1.20.1-fabric"
+yacl = "3.5.0+1.20.4-fabric"
 
 mixin = "0.14.0+mixin.0.8.6"
 
@@ -37,27 +37,27 @@ shadow = "7.1.2"
 
 cloud = "1.8.4"
 
-silk = "1.10.1"
+silk = "1.10.3"
 
 json5k = "0.3.0"
 
 paralithic = "0.8.0-fma-merged-dev"
 
-reach-entity-attributes = "2.4.0"
+reach-entity-attributes = "2.5.0"
 
 arrp = "0.8.1"
 
 colormath = "3.5.0"
 
-owo = "0.11.2+1.20"
-lavender = "0.1.9+1.20"
+owo = "0.12.6+1.20.3"
+lavender = "0.1.9+1.20.3"
 
-azurelib = "2.0.32-alpha"
-geckolib = "4.4.7"
+azurelib = "2.1.17"
+geckolib = "4.4.4"
 
-emi = "1.1.6+1.20.1"
-rei = "12.1.725"
-jei = "15.3.0.8"
+emi = "1.1.10+1.20.4"
+rei = "14.1.742"
+jei = "17.3.1.3"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
@@ -155,11 +155,11 @@ owo-sentinel = { group = "io.wispforest", name = "owo-sentinel", version.ref = "
 lavender = { group = "io.wispforest", name = "lavender", version.ref = "lavender" }
 
 
-azurelib-fabric = { group = "mod.azure.azurelib", name = "azurelib-fabric-1.20.1", version.ref = "azurelib" }
-azurelib-common = { group = "mod.azure.azurelib", name = "azurelib-common-1.20.1", version.ref = "azurelib" }
+azurelib-fabric = { group = "mod.azure.azurelib", name = "azurelib-fabric-1.20.4", version.ref = "azurelib" }
+azurelib-common = { group = "mod.azure.azurelib", name = "azurelib-common-1.20.4", version.ref = "azurelib" }
 
-geckolib-fabric = { group = "software.bernie.geckolib", name = "geckolib-fabric-1.20.1", version.ref = "geckolib" }
-#geckolib-common = { group = "software.bernie.geckolib", name = "geckolib-common-1.20.1", version.ref = "geckolib" }
+geckolib-fabric = { group = "software.bernie.geckolib", name = "geckolib-fabric-1.20.4", version.ref = "geckolib" }
+#geckolib-common = { group = "software.bernie.geckolib", name = "geckolib-common-1.20.4", version.ref = "geckolib" }
 
 
 emi = { group = "dev.emi", name = "emi-fabric", version.ref = "emi" }
@@ -167,7 +167,7 @@ emi = { group = "dev.emi", name = "emi-fabric", version.ref = "emi" }
 rei-api-fabric = { group = "me.shedaniel", name = "RoughlyEnoughItems-api-fabric", version.ref = "rei" }
 rei-default-plugin-fabric = { group = "me.shedaniel", name = "RoughlyEnoughItems-default-plugin-fabric", version.ref = "rei" }
 
-jei-fabric = { group = "mezz.jei", name = "jei-1.20.1-fabric", version.ref = "jei" }
+jei-fabric = { group = "mezz.jei", name = "jei-1.20.4-fabric", version.ref = "jei" }
 
 [bundles]
 kotlinx-coroutines = [

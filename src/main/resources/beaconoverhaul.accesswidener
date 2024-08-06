@@ -17,11 +17,11 @@ accessible field net/minecraft/block/entity/BeaconBlockEntity EFFECTS Ljava/util
 mutable field net/minecraft/block/entity/BeaconBlockEntity EFFECTS Ljava/util/Set;
 
 # For updating the status effect
-accessible method net/minecraft/block/entity/BeaconBlockEntity getPotionEffectById (I)Lnet/minecraft/entity/effect/StatusEffect;
+# accessible method net/minecraft/block/entity/BeaconBlockEntity getPotionEffectById (I)Lnet/minecraft/entity/effect/StatusEffect;
 
 # For subclassing
 accessible field net/minecraft/block/entity/BeaconBlockEntity beamSegments Ljava/util/List;
-accessible field net/minecraft/block/entity/BeaconBlockEntity beamSegmentsToCheck Ljava/util/List;
+# accessible field net/minecraft/block/entity/BeaconBlockEntity beamSegmentsToCheck Ljava/util/List;
 accessible field net/minecraft/block/entity/BeaconBlockEntity level I
 accessible field net/minecraft/block/entity/BeaconBlockEntity minY I
 accessible field net/minecraft/block/entity/BeaconBlockEntity primary Lnet/minecraft/entity/effect/StatusEffect;
@@ -33,3 +33,12 @@ accessible method net/minecraft/block/entity/BlockEntityType create (Ljava/lang/
 
 # Only used during datagen
 accessible method net/minecraft/Bootstrap collectMissingTranslations (Ljava/lang/Iterable;Ljava/util/function/Function;Ljava/util/Set;)V
+
+# 1.20.4 additions
+accessible method net/minecraft/world/GameRules register (Ljava/lang/String;Lnet/minecraft/world/GameRules$Category;Lnet/minecraft/world/GameRules$Type;)Lnet/minecraft/world/GameRules$Key;
+accessible method net/minecraft/world/GameRules$IntRule create (I)Lnet/minecraft/world/GameRules$Type;
+accessible method net/minecraft/block/entity/BeaconBlockEntity getEffectOrNull (Lnet/minecraft/entity/effect/StatusEffect;)Lnet/minecraft/entity/effect/StatusEffect;
+accessible method net/minecraft/entity/attribute/EntityAttributeInstance removeModifier (Lnet/minecraft/entity/attribute/EntityAttributeModifier;)V
+
+accessible class net/minecraft/entity/effect/StatusEffect$EffectAttributeModifierCreator
+accessible field net/minecraft/entity/effect/StatusEffect$EffectAttributeModifierCreator operation Lnet/minecraft/entity/attribute/EntityAttributeModifier$Operation;

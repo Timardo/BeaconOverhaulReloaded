@@ -52,8 +52,9 @@ abstract class LivingEntityMixin extends Entity {
 
     /**
      * Don't damage tick when the health boost effect is being upgraded/re-applied.
+     * TODO: HealthBoost class does not exist anymore, no idea what this does and if it's still needed
      */
-    @Redirect(
+    /*@Redirect(
             method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z",
             at = @At(
                     value = "INVOKE",
@@ -69,7 +70,7 @@ abstract class LivingEntityMixin extends Entity {
         }
 
         this.onStatusEffectUpgraded(effect, false, source);
-    }
+    }*/
 
     @ModifyExpressionValue(
             method = "travel",

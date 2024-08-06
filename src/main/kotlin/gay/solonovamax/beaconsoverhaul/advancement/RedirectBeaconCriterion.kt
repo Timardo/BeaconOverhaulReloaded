@@ -1,6 +1,6 @@
 package gay.solonovamax.beaconsoverhaul.advancement
 
-import com.google.gson.JsonObject
+/*import com.google.gson.JsonObject
 import gay.solonovamax.beaconsoverhaul.util.identifierOf
 import net.minecraft.advancement.criterion.AbstractCriterion
 import net.minecraft.advancement.criterion.AbstractCriterionConditions
@@ -39,3 +39,4 @@ object RedirectBeaconCriterion : AbstractCriterion<RedirectBeaconCriterion.Condi
         }
     }
 }
+*/

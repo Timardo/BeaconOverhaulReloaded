@@ -64,6 +64,6 @@ public abstract class ConduitBlockMixin extends BlockWithEntity {
     @Overwrite
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         BlockEntityTicker<OverhauledConduitBlockEntity> ticker = world.isClient ? OverhauledConduitBlockEntity::clientTick : OverhauledConduitBlockEntity::serverTick;
-        return BlockWithEntity.checkType(type, BlockEntityType.CONDUIT, JvmUtils.castUnchecked(ticker));
+        return BlockWithEntity.validateTicker(type, BlockEntityType.CONDUIT, JvmUtils.castUnchecked(ticker));
     }
 }

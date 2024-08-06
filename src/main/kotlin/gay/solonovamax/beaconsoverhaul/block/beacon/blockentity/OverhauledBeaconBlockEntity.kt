@@ -7,7 +7,7 @@ import com.github.ajalt.colormath.model.RGB
 import com.github.ajalt.colormath.model.SRGB
 import com.github.ajalt.colormath.transform.interpolate
 import gay.solonovamax.beaconsoverhaul.BeaconOverhaulReloaded
-import gay.solonovamax.beaconsoverhaul.advancement.RedirectBeaconCriterion
+//import gay.solonovamax.beaconsoverhaul.advancement.RedirectBeaconCriterion
 import gay.solonovamax.beaconsoverhaul.block.beacon.OverhauledBeacon
 import gay.solonovamax.beaconsoverhaul.block.beacon.data.OverhauledBeaconData
 import gay.solonovamax.beaconsoverhaul.config.ConfigManager
@@ -94,7 +94,7 @@ fun OverhauledBeacon.updateTier(world: World, pos: BlockPos) {
 
     if (level > this.level) {
         // if (/*!broke &&*/beamSegmentsToCheck.isNotEmpty()) {
-        for (player in world.nonSpectatingEntities<ServerPlayerEntity>(Box(pos, pos).expand(10.0)))
+        for (player in world.nonSpectatingEntities<ServerPlayerEntity>(Box(pos.x.toDouble(), pos.y.toDouble(), pos.z.toDouble(), pos.x.toDouble(), pos.y.toDouble(), pos.z.toDouble()).expand(10.0)))
             Criteria.CONSTRUCT_BEACON.trigger(player, level)
         // }
     }
@@ -210,7 +210,7 @@ fun OverhauledBeacon.testCanApplyEffect(effect: StatusEffect): Boolean {
         effect in ConfigManager.beaconConfig.beaconEffectsByTier.tierOne -> level >= 1
         effect in ConfigManager.beaconConfig.beaconEffectsByTier.tierTwo -> level >= 2
         effect in ConfigManager.beaconConfig.beaconEffectsByTier.tierThree -> level >= 3
-        effect !in ConfigManager.beaconConfig.beaconEffectsByTier.secondaryEffects -> level >= 4
+        effect in ConfigManager.beaconConfig.beaconEffectsByTier.secondaryEffects -> level >= 4
         else -> false
     }
 }
@@ -435,8 +435,8 @@ fun OverhauledBeacon.constructBeamSegments() {
 
     if (!this.didRedirection && didRedirection) {
         if (!broke && beamSegmentsToCheck.isNotEmpty()) {
-            for (player in world.nonSpectatingEntities<ServerPlayerEntity>(Box(pos, pos).expand(10.0)))
-                RedirectBeaconCriterion.trigger(player)
+            /*for (player in world.nonSpectatingEntities<ServerPlayerEntity>(Box(pos.x.toDouble(), pos.y.toDouble(), pos.z.toDouble(), pos.x.toDouble(), pos.y.toDouble(), pos.z.toDouble()).expand(10.0)))
+                RedirectBeaconCriterion.trigger(player)*/
         }
     }
 

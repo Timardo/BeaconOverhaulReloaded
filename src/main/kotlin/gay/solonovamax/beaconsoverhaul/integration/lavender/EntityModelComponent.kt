@@ -192,7 +192,8 @@ class EntityModelComponent<E : Entity> private constructor(
         }
     }
 
-    class RenderablePlayerEntity(profile: GameProfile?) : ClientPlayerEntity(
+    // no idea what this does but it looks like it is not used anywhere, I cannot update it so yeet it is
+    /*class RenderablePlayerEntity(profile: GameProfile?) : ClientPlayerEntity(
         MinecraftClient.getInstance(),
         MinecraftClient.getInstance().world,
         ClientPlayNetworkHandler(
@@ -229,13 +230,13 @@ class EntityModelComponent<E : Entity> private constructor(
         override fun getModel(): String = if (model != null) model!! else super.getModel()
 
         override fun getPlayerListEntry(): PlayerListEntry? = null
-    }
+    }*/
 
     companion object {
         private val client: MinecraftClient
             get() = MinecraftClient.getInstance()
 
-        fun createRenderablePlayer(profile: GameProfile?): RenderablePlayerEntity = RenderablePlayerEntity(profile)
+        //fun createRenderablePlayer(profile: GameProfile?): RenderablePlayerEntity = RenderablePlayerEntity(profile)
 
         fun parse(element: Element): EntityModelComponent<*> {
             UIParsing.expectAttributes(element, "type")

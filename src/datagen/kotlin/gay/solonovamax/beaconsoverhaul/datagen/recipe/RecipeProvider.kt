@@ -8,8 +8,8 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
 import net.minecraft.data.family.BlockFamilies
 import net.minecraft.data.family.BlockFamily.Variant
 import net.minecraft.recipe.book.RecipeCategory
-
-class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
+// no idea how to fix this
+/*class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
     override fun generate(exporter: RecipeExporter) {
         exporter.offerWallRecipe(BlockFamilies.PRISMARINE_BRICK)
         exporter.offerWallRecipe(BlockFamilies.DARK_PRISMARINE)
@@ -18,3 +18,4 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
         exporter.offerStonecuttingRecipe(RecipeCategory.DECORATIONS, BlockFamilies.DARK_PRISMARINE, Variant.WALL)
     }
 }
+*/

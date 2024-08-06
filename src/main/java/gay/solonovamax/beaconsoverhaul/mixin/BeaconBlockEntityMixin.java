@@ -79,7 +79,7 @@ abstract class BeaconBlockEntityMixin extends BlockEntity implements ExtendedScr
     public int minY;
 
     @Shadow
-    public List<BeaconBlockEntity.BeamSegment> beamSegmentsToCheck;
+    private List<BeaconBlockEntity.BeamSegment> field_19178;
 
     @Unique
     private boolean brokenBeam = false;
@@ -437,14 +437,14 @@ abstract class BeaconBlockEntityMixin extends BlockEntity implements ExtendedScr
     @Override
     @SuppressWarnings({"AssignmentOrReturnOfFieldWithMutableType", "unchecked"})
     public List<BeaconBeamSegment> getBeamSegmentsToCheck() {
-        return (List<BeaconBeamSegment>) (List<?>) this.beamSegmentsToCheck;
+        return (List<BeaconBeamSegment>) (List<?>) this.field_19178;
     }
 
     @Unique
     @Override
     @SuppressWarnings({"AssignmentOrReturnOfFieldWithMutableType", "unchecked"})
     public void setBeamSegmentsToCheck(@NotNull List<BeaconBeamSegment> beamSegmentsToCheck) {
-        this.beamSegmentsToCheck = (List<BeaconBlockEntity.BeamSegment>) (List<?>) beamSegmentsToCheck;
+        this.field_19178 = (List<BeaconBlockEntity.BeamSegment>) (List<?>) beamSegmentsToCheck;
     }
 
     @Override
